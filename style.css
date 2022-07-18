@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@300;400;500;600;700;800&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kumbh+Sans:wght@400;500;700;800&family=Roboto+Condensed:wght@700&family=Roboto+Mono:wght@100;200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+html{
+    font-size: 15px;
+    scroll-behavior: smooth;
+    scroll-padding:0;
+
+}
+/*--------------------menu-------------*/
+
+header{
+    position: fixed;
+    background:rgba(150, 197, 122, 0.377);
+    width: 100%;
+    padding: 1.5em 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+
+}
+header a{
+    text-decoration: none;
+    color: rgb(255, 0, 0);
+}
+header #logo{
+    text-transform: uppercase;
+    display: flex;
+    gap:15px;
+    align-items: center;
+    font-size: 1.7em;
+}
+header span{
+    color:rgb(145, 8, 8) ;
+}
+header .logo_img{
+    width: 50px;
+    
+}
+header input{
+    display: none;
+}
+header label{
+ cursor: pointer;
+ font-size: 2em;
+ visibility: hidden;
+ opacity: 0;
+}
+header .nav_barv{
+   
+z-index: 6;
+text-transform: capitalize;
+ 
+}
+header .nav_barv a{
+    margin-left:15px ;
+}
+header .nav_barv a:hover{
+    color: white;
+}
+/*-------------Hero------------------*/
+
+#hero{
+background:rgba(148, 236, 96, 0.61);
+    width: 100%;
+    height: 100vh;
+    padding-top: 125px ;
+}
+#hero img{
+ 
+    width: 100%;
+    height: 100%;
+
+}
+.title{
+    padding: 0 10%;
+    position: absolute;
+    top: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title_uno{
+padding: 30px;
+ display: block;
+ gap: 20px;   
+}
+.title_uno h1{
+    padding: 40px 0;
+    font-weight:bold;
+    text-transform: uppercase;
+}
+/*-------------Productos------------------*/
+
+#productos{
+    background: greenyellow;
+width: 100%;
+height: 100vh;
+}
+@media (max-width:850px){
+.title{
+    flex-direction: column;
+    flex-wrap: wrap;
+   top:18vh;
+
+}
+.title_uno{
+    text-align: center;
+    display: grid;
+    place-content: center;
+}
+}
+
+@media (max-width:1010px) {
+    
+    header label{
+        visibility: visible;
+        opacity: 1;
+        
+    }
+   header{
+    z-index: 1000000;
+   }
+    header .nav_barv{
+        border-radius: 0 0 15px 15px ;
+        position: absolute;
+        top:100%;
+        left: 0;
+        width: 100%;
+        height: content;
+        box-shadow:  0 8px 15px 0 rgb(0 0 0 / 60%),
+        0 10px 10px 0 rgba(241, 240, 240, 0.726);
+        opacity: 0;
+        transition: opacity 1s; 
+    }
+    header nav{
+        background: rgba(255, 255, 255, 0.705);
+        z-index: -1;
+        transition:animation 1s;
+        animation:arriba 1s;
+   }
+    @keyframes arriba {
+        0%{
+            transform: translateX(0);            
+        }
+        100%{
+    
+            transform: translateX(-250px);
+        }
+    }
+    header .nav_barv a{
+        border-bottom:2px solid rgba(212, 212, 212, 0.301);
+       margin: 0;
+       padding: 10px;
+        display: block;
+    }
+    header .nav_barv a:last-child{
+        border: none;
+    }
+    header .nav_barv a:hover{
+        color: black;
+        background: rgb(218, 214, 214);
+        outline: 2px solid rgb(170, 168, 168);
+    }
+    
+    
+    
+    header input:checked ~ nav{
+        transition: opacity 300ms ;
+        opacity: 1;
+       animation: menu_abajo 1s;
+       transform-origin: bottom;
+    }
+    @keyframes menu_abajo {
+        0%{
+            transform: translateY(-250px);            
+        }
+        100%{
+            
+            transform: translateY(0);
+        }
+    }
+    header input:checked ~ label::before{
+        content: "\f00d";
+        
+    }
+}
