@@ -9,20 +9,26 @@
 html{
     font-size: 15px;
     scroll-behavior: smooth;
-    scroll-padding:0;
+    scroll-padding:95px;
 
+}
+body{
+    background:rgb(141, 197, 110);
 }
 /*--------------------menu-------------*/
 
 header{
     position: fixed;
-    background:rgba(150, 197, 122, 0.377);
+    background:rgb(152, 221, 112);
     width: 100%;
     padding: 1.5em 9%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-shadow:  0 3px 5px 0 rgba(0, 0, 0, 0.322),
+    0 5px 10px 0 rgba(241, 240, 240, 0.226);
     z-index: 100;
+
 
 }
 header a{
@@ -53,7 +59,7 @@ header label{
  opacity: 0;
 }
 header .nav_barv{
-   
+   text-align: center;
 z-index: 6;
 text-transform: capitalize;
  
@@ -69,7 +75,7 @@ header .nav_barv a:hover{
 #hero{
 background:rgba(148, 236, 96, 0.61);
     width: 100%;
-    height: 100vh;
+    height:100vh;
     padding-top: 125px ;
 }
 #hero img{
@@ -99,24 +105,192 @@ padding: 30px;
 /*-------------Productos------------------*/
 
 #productos{
-    background: greenyellow;
+background:
+rgb(155, 228, 46);
 width: 100%;
-height: 100vh;
+height: auto;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+gap:25px;
+padding: 40px;
+
+}
+#productos .Crad{
+margin: auto;
+width: 450px;
+height: 630px;
+padding: 20px;
+box-shadow: 40px 15px 20px 0 rgba(0, 0, 0, 0.219);
+border-radius: 15px;
+background:  greenyellow;
+
+}
+hr{
+    width: 80%;
+    margin: 15px auto;
+    border: none;
+    background: rgba(0, 0, 0, 0.726);
+    height: 2px;
+}
+/*-----------informacion--Productos------------------*/
+
+#info-productos{
+    background: rgb(130, 201, 23);
+    padding: 25px 0 ;
+    width: 100%;
+    height: 90vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#info-productos .inf_card{
+    border-radius: 20px;
+    padding: 15px;
+    background: rgb(169, 236, 67);
+    position: relative;
+    height: 450px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   text-align: center;
+   box-shadow: 0 -6px 5px 3px rgba(0, 0, 0, 0.418);
+    
+}
+.inf_card  .btn{
+    background: linear-gradient(45deg,rgb(68, 245, 24), rgb(196, 223, 156) );
+    bottom: 30px;
+    left: 30% ;
+    margin: 0 auto;
+    width: 60%;
+    border: none;
+    border-radius: 15px 10px;
+    padding: 6px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 1s;
+}
+.inf_card  .btn:hover{
+    cursor: pointer;
+    color: white;
+    background: rgb(0, 0, 0);
+    border-radius: 15px;
+}
+/*-------------galeria------------------*/
+
+#galeria{
+    padding: 15px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(150px,300px));
+    grid-gap:10px;
+    position: relative;
+}
+#galeria .gale_img{
+    border-radius: 15px;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+#galeria .gale_img:hover{
+   outline: 4px solid rgb(0, 0, 0);
+ 
+}
+.zoom{
+
+    position: absolute;
+    font-size: 3em;
+    top:70px;
+    left: 45%;
+}
+/*-------------contactos------------------*/
+
+#contantos{
+    width: 100%;
+    height: 100vh;
+    background: rgb(255, 255, 255);
+}
+
+
+@media (max-width:1120px){
+    #info-productos{
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+}
+@media (max-width:650px){
+    #productos article{
+      
+        z-index: 240;
+        margin: 0 auto;
+        max-width: 80vw;
+        text-align: center;
+    }
 }
 @media (max-width:850px){
+    header {
+        width: 100vw;
+    }
+    #hero{
+        width: 100vw;
+        z-index: 100;
+    }
+  
+
 .title{
     flex-direction: column;
     flex-wrap: wrap;
    top:18vh;
 
 }
+.title img{
+    z-index: 10;
+}
 .title_uno{
     text-align: center;
     display: grid;
     place-content: center;
 }
+/*---productos*/
+#productos{
+    width: 100vw;
+    position: relative;
+    display: flex;
+    gap:20px;
+    flex-direction:column;
+    z-index: 200;
+    padding: 25px 0;
 }
-
+#productos article{
+    z-index: 240;
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+/*------------------informarcio-------------*/
+#info-productos{
+   padding: 50px 30px;
+   height: auto;
+    width: 100vw;
+    display: grid;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+#info-productos .inf_card{
+     padding: 30px;
+}
+}
+/* menu jajaja----*/
 @media (max-width:1010px) {
     
     header label{
@@ -143,15 +317,16 @@ height: 100vh;
         background: rgba(255, 255, 255, 0.705);
         z-index: -1;
         transition:animation 1s;
-        animation:arriba 1s;
-   }
+        animation:arriba 1s ;
+       animation-fill-mode: forwards;
+    }
     @keyframes arriba {
         0%{
             transform: translateX(0);            
         }
         100%{
-    
-            transform: translateX(-250px);
+            
+            transform: translateX(-650px);
         }
     }
     header .nav_barv a{
