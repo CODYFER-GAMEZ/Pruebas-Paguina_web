@@ -26,7 +26,7 @@
         <a class="link_barv link" href="#productos">productos</a>
         <a class="link_barv link" href="#info-productos">info-productos</a>
         <a class="link_barv link" href="#galeria">galeria</a>
-        <a class="link_barv link" href="#contantos">contantos</a>
+        <a class="link_barv link" href="#contactos_card_d">contantos</a>
         <a class="link_barv link" href="#mas cosas">mas cosas</a>
       </nav>
     </header>
@@ -169,39 +169,32 @@
     </div>
      
     <div class="container">
+      <div class="contactos_card" id="contactos_card_d">
+      <div class="card_correo">
+        
+        <img src="/correo.png" alt="correo">
         <form id="contantos" action="#">
-
-            <fieldset>
-            
-                    <legend>Formulario</legend>
-                    <input id="user" name="user" type="text" placeholder="ingresa tu nombre" required>
-                    <label for="user">Tu Nombre</label>
+                     <label for="user" class="userr">name:</label>
+                    <input id="user" class="userr" name="user" type="text" placeholder="ingresa tu nombre" required>
                     <br>
-                    <input id="pass" name="pass" type="password" placeholder="ingresa tu contraseña" required>
-                    <label for="pass">Contraseña</label>
+                    <label for="email" class="emaill">email: </label>
+                    <input id="email" class="emaill" name="email" type="email" placeholder="ingresa tu correo" required>
                     <br>
-                    <input id="email" name="email" type="email" placeholder="ingresa tu correo" required>
-                    <label for="email">Tu Nombre</label>
+                    <label  for="comen" class="comen_dos">comentario:</label>
+                    <textarea  id="comen"  class="comen_dos" placeholder="cual es tu comentario" > </textarea>
                     <br>
-            </fieldset>
+        
+                   <div class="butoonn">
+        
+                     <button type="submit">Enviar</button>
+                     <button type="reset">Limpiar</button>
+        
+                   </div>
+                  </form>
+      </div>
 
-            <fieldset>
-                <legend>Eligue</legend>
 
-                <input id="red" type="checkbox" value="red" name="red">
-                <label for="red">Rojo</label>
-                <input id="blue" type="checkbox" value="blue" name="blue">
-                <label for="blue">Azul</label>
-                <input id="green" type="checkbox"  value="greem" name="green" >
-                <label for="green">Verde</label>
-                <input id="yellow" type="checkbox" value="yellow" name="yellow" >
-                <label for="yellow">Amarillo</label>
-            </fieldset>
-
-            <button type="submit">Enviar</button>
-            <button type="reset">Limpiar</button>
-
-        </form>
+        </div>
     </div>
 
   </body>
